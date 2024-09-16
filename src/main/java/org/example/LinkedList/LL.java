@@ -2,6 +2,13 @@ package org.example.LinkedList;
 
 public class LL  {
 public  BuildNode head;
+
+//the benefit of taking tail variable is that
+  //with this we can insert an element in the last with constant time
+  //what if we donot take this variable then we will have to use the same
+  // temp and will insert it  in the last which we will take o2 time to insert
+  //element in the last
+
 public BuildNode tail;
 private int size;
 public LL() {
@@ -30,7 +37,51 @@ public void display(){
   System.out.println("End");
 }
 
- 
+
+
+//inserting element at the end of the node
+public void insertLast(int data) {
+  //i am still confused what this means
+  if(tail==null){
+    insertFirst(data);
+    return ;
+  }
+BuildNode buildNode=new BuildNode(data);
+tail.next=buildNode;
+tail=buildNode;
+size++;
+}
+
+
+//inserting element at a particular index
+  //what if the index is zero then insert at the first
+  //and if the index size is equal linkedlist size then we will have
+  // to insert at the end of the linked list
+
+public  void  insertAtIndex(int value,int index){
+
+if(index == 0){
+  insertFirst(value);
+}
+if(index == size)
+{
+  insertLast(value);
+}
+
+BuildNode temp=head;
+
+
+for(int i=1;i<index;i++){
+  temp=temp.next;
+}
+
+BuildNode newNode=new BuildNode(value,temp.next);
+temp.next=newNode;
+
+size++;
+
+}
+
 
 
 

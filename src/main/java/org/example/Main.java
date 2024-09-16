@@ -1,9 +1,7 @@
 package org.example;
 
-import org.example.LinkedList.BuildNode;
 import org.example.LinkedList.LL;
 
-import org.example.*;
 
 import java.io.*;
 
@@ -18,9 +16,10 @@ l1.insertFirst(3);
         l1.insertFirst(6);
         l1.insertFirst(8);
         l1.insertFirst(9);
-
-l1.display();
-
+        //this will inserted at the end of the node
+        l1.insertLast(30);
+        l1.insertAtIndex(100,3);
+        l1.display();
 
     }
 
